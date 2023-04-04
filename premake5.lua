@@ -1,5 +1,6 @@
 workspace "Ulta"
     architecture "x86_64"
+    startproject "sandbox"
     
     configurations 
     { 
@@ -10,4 +11,8 @@ output_dir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 group "core"
     include "ulta"
+group ""
+
+group "misc"
+    include "sandbox"
 group ""

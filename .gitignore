@@ -1,4 +1,8 @@
 # Directories
+bin/
+bin-int/
 
 # Files
 .DS_Store
+*.xcworkspace
+ulta/*.xcodeproj
