@@ -6,3 +6,4 @@ bin-int/
 .DS_Store
 *.xcworkspace
 ulta/*.xcodeproj
+sandbox/*.xcodeproj
