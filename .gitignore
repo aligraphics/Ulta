@@ -1,6 +1,7 @@
 # Directories
 bin/
 bin-int/
+sandbox/sandbox.xcodeproj/
 
 # Files
 .DS_Store
