@@ -1,0 +1,3 @@
+[submodule "ulta/external/glfw"]
+	path = ulta/external/glfw
+	url = https://github.com/glfw/glfw

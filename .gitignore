@@ -2,9 +2,17 @@
 bin/
 bin-int/
 sandbox/sandbox.xcodeproj/
+.vs/
+.vscode/
 
 # Files
 .DS_Store
 *.xcworkspace
-ulta/*.xcodeproj
-sandbox/*.xcodeproj
+ulta/ulta.xcodeproj
+ulta/ulta.vcxproj
+ulta/ulta.vcxproj.filters
+ulta/ulta.vcxproj.user
+sandbox/sandbox.xcodeproj
+sandbox/sandbox.vcxproj
+sandbox/sandbox.vcxproj.user
+Ulta.sln

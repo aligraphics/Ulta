@@ -7,7 +7,7 @@ project "ulta"
     targetdir ("%{wks.location}/bin/" .. output_dir .. "/%{prj.name}")
 	objdir ("%{wks.location}/bin-int/" .. output_dir .. "/%{prj.name}")
 
-    pchheader "source/ultapch.hpp"
+    pchheader "ultapch.hpp"
 	pchsource "source/ultapch.cpp"
 
     files
@@ -16,10 +16,28 @@ project "ulta"
 		"source/**.cpp"
 	}
 
+    defines
+    {
+        "GLFW_INCLUDE_NONE"
+    }
+
     includedirs
 	{
-		"source"
+		"source",
+        "%{include_dir.GLFW}"
     }
+
+    links
+    {
+        "GLFW"
+    }
+
+    filter "system:windows"
+        systemversion "latest"
+        defines
+        {
+            "ULTA_PLATFORM_WINDOWS"
+        }
 
     filter "configurations:Debug"
         defines "ULTA_DEBUG"
