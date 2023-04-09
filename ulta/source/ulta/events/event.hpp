@@ -1,6 +1,7 @@
 #pragma once
 
 #include <functional>
+#include <string>
 
 namespace ulta
 {
@@ -19,7 +20,7 @@ namespace ulta
 		EVENT_CATEGORY_INPUT          = BIT(1),
 		EVENT_CATEGORY_KEYBOARD       = BIT(2),
 		EVENT_CATEGORY_MOUSE          = BIT(3),
-		EVENT_CATEGORY_MOUSE_BUTTON    = BIT(4)
+		EVENT_CATEGORY_MOUSE_BUTTON   = BIT(4)
     };
 
     #define EVENT_CLASS_TYPE(type) static event_type get_static_type() { return event_type::type; }\

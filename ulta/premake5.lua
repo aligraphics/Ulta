@@ -23,6 +23,11 @@ project "ulta"
         "%{include_dir.glfw}"
     }
 
+    libdirs
+    {
+        "%{library_dir.glfw}"
+    }
+
     links
     {
         "glfw3"

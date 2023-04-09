@@ -38,9 +38,8 @@ namespace ulta
         m_data.height = window_properties.m_height;
 
         int success = glfwInit();
-        std::cout << "GLFW SUCCESS: success\n";
 
-        m_window = glfwCreateWindow(m_data.width, m_data.height, m_data.title.data(), nullptr, m_window);
+        m_window = glfwCreateWindow(m_data.width, m_data.height, m_data.title.data(), nullptr, nullptr);
 
         glfwSetWindowUserPointer(m_window, &m_data);
 

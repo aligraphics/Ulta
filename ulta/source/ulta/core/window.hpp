@@ -3,6 +3,8 @@
 #include "ulta/core/base.hpp"
 #include "ulta/events/event.hpp"
 
+#include "ulta/defines.hpp"
+
 namespace ulta
 {
     struct window_properties

@@ -8,4 +8,4 @@
 #include <sstream>
 #include <iostream>
 #include <memory>
-
+#include <cassert>

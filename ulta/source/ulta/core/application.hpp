@@ -3,8 +3,6 @@
 #include "ulta/core/window.hpp"
 #include "ulta/events/application_event.hpp"
 
-#include <string>
-
 int main();
 
 namespace ulta
