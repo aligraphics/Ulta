@@ -9,4 +9,13 @@ extern ulta::application* ulta::create_application();
 int main()
 {
     std::cout << "Hello from Sandbox App\n";
+
+    // create
+    auto app = ulta::create_application();
+
+    // run
+    app->run();
+
+    // delete
+    delete app;
 }

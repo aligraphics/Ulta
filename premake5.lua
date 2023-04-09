@@ -1,3 +1,5 @@
+include "dependencies.lua"
+
 workspace "Ulta"
     architecture "x86_64"
     startproject "sandbox"

@@ -22,7 +22,6 @@ namespace ulta
     public:
         using event_callback_fn = std::function<void(event&)>;
 
-        window();
         virtual ~window() = default;
 
         virtual void on_update() = 0;
@@ -36,6 +35,6 @@ namespace ulta
 
         virtual void* get_native_window() const = 0;
 
-        // static scope<window> create(const window_properties& window_properties = window_properties());
+        static scope<window> create(const window_properties& props = window_properties());
     };
 }

@@ -17,7 +17,7 @@ namespace ulta
 		std::string to_string() const override
 		{
 			std::stringstream ss;
-			ss << "MOUSE_MOVED_EVENT: " << m_mouse_x << ", " << m_mouse_y;
+			ss << "mouse_moved_event: " << m_mouse_x << ", " << m_mouse_y;
 			return ss.str();
 		}
 
@@ -39,7 +39,7 @@ namespace ulta
 		std::string to_string() const override
 		{
 			std::stringstream ss;
-			ss << "MOUSE_SCROLLED_EVENT: " << get_x_offset() << ", " << get_y_offset();
+			ss << "mouse_scrolled_event: " << get_x_offset() << ", " << get_y_offset();
 			return ss.str();
 		}
 
@@ -71,7 +71,7 @@ namespace ulta
 		std::string to_string() const override
 		{
 			std::stringstream ss;
-			ss << "MouseButtonPressedEvent: " << m_button;
+			ss << "mouse_button_pressed_event: " << m_button;
 			return ss.str();
 		}
 
@@ -87,7 +87,7 @@ namespace ulta
 		std::string to_string() const override
 		{
 			std::stringstream ss;
-			ss << "MouseButtonReleasedEvent: " << m_button;
+			ss << "mouse_button_released_event: " << m_button;
 			return ss.str();
 		}
 

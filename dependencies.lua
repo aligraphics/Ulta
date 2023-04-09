@@ -1,4 +1,4 @@
 -- Engine Dependencies
 
 include_dir = {}
-IncludeDir["GLFW"] = "%{wks.location}/ulta/external/GLFW/include"
+include_dir["glfw"] = "%{wks.location}/ulta/external/glfw/include"

@@ -58,7 +58,7 @@ namespace ulta
         template<typename T, typename F>
         bool dispatch(const F& func)
         {
-            if(m_event.get_event_type() == T::get_static_type)
+            if(m_event.get_event_type() == T::get_static_type())
             {
                 m_event.handled |= func(static_cast<T&>(m_event));
                 return true;

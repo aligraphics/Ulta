@@ -14,9 +14,9 @@ namespace ulta
         button_6                = 6,
         button_7                = 7,
 
-        button_last             = Button7,
-        button_left             = Button0,
-        button_right            = Button1,
-        button_middle           = Button2
+        button_last             = button_7,
+        button_left             = button_0,
+        button_right            = button_1,
+        button_middle           = button_2
     };
 }
