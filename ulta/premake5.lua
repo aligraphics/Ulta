@@ -10,7 +10,7 @@ project "ulta"
     files
 	{
 		"source/**.hpp",
-		"source/**.cpp"
+		"source/**.cpp",
 	}
 
     defines
@@ -20,17 +20,20 @@ project "ulta"
     includedirs
 	{
 		"source",
-        "%{include_dir.glfw}"
+        "external",
+        "%{include_dir.glfw}",
     }
 
     libdirs
     {
-        "%{library_dir.glfw}"
+        "%{library_dir.glfw}",
+        "%{library_dir.imgui}"
     }
 
     links
     {
-        "glfw3"
+        "glfw3",
+        "ImGui.lib",
     }
 
     filter "system:windows"

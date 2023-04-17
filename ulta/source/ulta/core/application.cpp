@@ -22,6 +22,18 @@ namespace ulta
         dispatcher.dispatch<window_close_event>(ULTA_BIND_EVENT_FN(application::on_window_close));
     }
 
+    void application::push_layer(layer* layer)
+    {
+        m_layerstack.push_layer(layer);
+        layer->on_attach();
+    }
+
+    void application::push_overlay(layer* layer)
+    {
+        m_layerstack.push_overlay(layer);
+        layer->on_attach();
+    }
+
     void application::run()
     {
         while(m_running)

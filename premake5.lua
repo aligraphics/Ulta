@@ -2,7 +2,7 @@ include "dependencies.lua"
 
 workspace "Ulta"
     architecture "x86_64"
-    startproject "sandbox"
+    startproject "editor"
     
     configurations 
     { 
@@ -11,9 +11,15 @@ workspace "Ulta"
 
 output_dir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+group "dependencies"
+    include "ulta/external/imgui"
+
 group "core"
     include "ulta"
 group ""
+
+group "tools"
+    include "editor"
 
 group "misc"
     include "sandbox"
