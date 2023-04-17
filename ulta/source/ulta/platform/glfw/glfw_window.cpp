@@ -2,6 +2,8 @@
 #include "ulta/platform/glfw/glfw_window.hpp"
 
 #include "ulta/events/application_event.hpp"
+#include "ulta/events/mouse_event.hpp"
+#include "ulta/events/key_event.hpp"
 
 namespace ulta
 {
@@ -49,6 +51,79 @@ namespace ulta
 			window_close_event event;
 			data.event_callback(event);
 		});
+
+        glfwSetWindowSizeCallback(m_window, [](GLFWwindow* window, int width, int height)
+        {
+            window_data& data = *(window_data*)glfwGetWindowUserPointer(window);
+            data.width = width;
+            data.height = height;
+
+            window_resize_event event(width, height);
+            data.event_callback(event);
+        });
+
+        glfwSetKeyCallback(m_window, [](GLFWwindow* window, int key, int scancode, int action, int mods)
+        {
+            window_data& data = *(window_data*)glfwGetWindowUserPointer(window);
+            
+            switch(action)
+            {
+                case GLFW_PRESS:
+                {
+                    key_pressed_event event((key_code)key, 0);
+                    data.event_callback(event);
+                    break;
+                }
+                case GLFW_RELEASE:
+                {
+                    key_released_event event((key_code)key);
+                    data.event_callback(event);
+                    break;
+                }
+                case GLFW_REPEAT:
+                {
+                    key_pressed_event event((key_code)key, 1);
+                    data.event_callback(event);
+                    break;
+                }
+            }
+        });
+
+        glfwSetCharCallback(m_window, [](GLFWwindow* window, unsigned int keycode)
+        {
+            window_data& data = *(window_data*)glfwGetWindowUserPointer(window);
+            key_typed_event event((key_code)keycode);
+            data.event_callback(event);
+        });
+
+        glfwSetCursorPosCallback(m_window, [](GLFWwindow* window, double xpos, double ypos)
+        {
+            window_data& data = *(window_data*)glfwGetWindowUserPointer(window);
+            mouse_moved_event event(xpos, ypos);
+            data.event_callback(event);
+        });
+
+        glfwSetScrollCallback(m_window, [](GLFWwindow* window, double xoffset, double yoffset)
+        {
+            window_data& data = *(window_data*)glfwGetWindowUserPointer(window);
+            mouse_scrolled_event event(xoffset, yoffset);
+            data.event_callback(event);
+        });
+
+        glfwSetMouseButtonCallback(m_window, [](GLFWwindow* window, int button, int action, int mods)
+        {
+            window_data& data = *(window_data*)glfwGetWindowUserPointer(window);
+            
+            if(action == GLFW_PRESS)
+            {
+                mouse_button_pressed_event event((mouse_code)button);
+                data.event_callback(event);
+            } else if(action == GLFW_RELEASE)
+            {
+                mouse_button_released_event event((mouse_code)button);
+                data.event_callback(event);
+            }
+        });
     }
 
     void glfw_window::shutdown()

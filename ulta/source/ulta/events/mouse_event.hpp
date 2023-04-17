@@ -8,11 +8,11 @@ namespace ulta
     class mouse_moved_event : public event
     {
     public:
- 		mouse_moved_event(const float x, const float y)
+ 		mouse_moved_event(const double x, const double y)
 			: m_mouse_x(x), m_mouse_y(y) {}
 
-		float get_x() const { return m_mouse_x; }
-		float get_y() const { return m_mouse_y; }
+		double get_x() const { return m_mouse_x; }
+		double get_y() const { return m_mouse_y; }
 
 		std::string to_string() const override
 		{
@@ -24,17 +24,17 @@ namespace ulta
 		EVENT_CLASS_TYPE(MOUSE_MOVED)
 		EVENT_CLASS_CATEGORY(EVENT_CATEGORY_MOUSE | EVENT_CATEGORY_INPUT)
     private:
-        float m_mouse_x, m_mouse_y;
+        double m_mouse_x, m_mouse_y;
     };
 
     class mouse_scrolled_event : public event
 	{
 	public:
-		mouse_scrolled_event(const float x_offset, const float y_offset)
+		mouse_scrolled_event(const double x_offset, const double y_offset)
 			: m_x_offset(x_offset), m_y_offset(y_offset) {}
 
-		float get_x_offset() const { return m_x_offset; }
-		float get_y_offset() const { return m_y_offset; }
+		double get_x_offset() const { return m_x_offset; }
+		double get_y_offset() const { return m_y_offset; }
 
 		std::string to_string() const override
 		{
@@ -46,7 +46,7 @@ namespace ulta
 		EVENT_CLASS_TYPE(MOUSE_SCROLLED)
 		EVENT_CLASS_CATEGORY(EVENT_CATEGORY_MOUSE | EVENT_CATEGORY_INPUT)
 	private:
-		float m_x_offset, m_y_offset;
+		double m_x_offset, m_y_offset;
 	};
 
 	class mouse_button_event : public event
